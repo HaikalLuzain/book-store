@@ -1,6 +1,6 @@
 <h1 align="center">
   <br>
-  Package-API
+  Book Store
   <br>
 </h1>
 
@@ -11,6 +11,8 @@
 
 ## Install
 
+    yarn install
+
 ### Development
 
 #### Requirements
@@ -20,14 +22,13 @@
 - Install NodeJS 12.x >=
 - Install Yarn
 
-### Get Started
+### Get Started Client
 
-    yarn install
-    yarn start
+    yarn start:all
 
 ### Develop
 
-    yarn dev
+    yarn dev:all
 
 ### Running Test
 
