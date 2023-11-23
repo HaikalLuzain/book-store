@@ -23,5 +23,8 @@
   },
   "description": "This is root",
   "author": "Haikal Firki Luzain",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "sass": "^1.69.5"
+  }
 }

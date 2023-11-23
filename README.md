@@ -11,7 +11,7 @@
 
 ## Install
 
-    yarn install
+    npm install
 
 ### Development
 
@@ -19,14 +19,10 @@
 
 - Install Git
 - Install MongoDB
-- Install NodeJS 12.x >=
+- Install NodeJS 20.x >=
 - Install Yarn
 
-### Get Started Client
-
-    yarn start:all
-
-### Develop
+### Get Started
 
     yarn dev:all
 

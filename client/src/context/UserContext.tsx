@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useEffect, useState } from 'react'
+import React, { createContext, useContext, useState } from 'react'
 import { User } from '@book-store/server/types/user'
 
 interface Props {
@@ -20,12 +20,9 @@ const useUserHook = ({ user: _user }: Props) => {
   }
 }
 
-export const UserContextProvider: React.FC<Props> = ({ user, children }) => {
-  const values = useUserHook({ user })
-
-  useEffect(() => {
-    values.setUser(user)
-  }, [values, user])
+export const UserContextProvider: React.FC<Props> = ({ children }) => {
+  const user = JSON.parse(localStorage.getItem('user') as any)
+  const values = useUserHook({ user: user || null })
 
   return <UserContext.Provider value={values}>{children}</UserContext.Provider>
 }

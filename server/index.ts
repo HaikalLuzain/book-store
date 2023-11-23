@@ -15,7 +15,7 @@ const corsOptions = {
   origin: 'http://localhost:3000', // reqexp will match all prefixes
   methods: 'GET,HEAD,POST,PATCH,DELETE,OPTIONS',
   credentials: true, // required to pass
-  allowedHeaders: 'Content-Type, Authorization, X-Requested-With',
+  allowedHeaders: 'Content-Type, X-xsrf-token, Authorization, X-Requested-With',
 }
 
 // app.options('*', cors(corsOptions))
@@ -23,17 +23,6 @@ app.use(cors(corsOptions))
 app.use(cookieParser())
 app.use(express.json())
 routes(app)
-
-// app.get('/api/cookie', (req, res) => {
-//   const options = {
-//     secure: false,
-//     httpOnly: true,
-//   }
-//   return res
-//     .cookie('cookieName', 'cookieValue', options)
-//     .status(200)
-//     .send('cookie sent')
-// })
 
 app.listen(port, () => {
   if (NODE_ENV !== 'test') console.log(`Server is running on port: ${port}`)

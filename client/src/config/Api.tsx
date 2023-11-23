@@ -45,3 +45,24 @@ API.interceptors.response.use(
 export const Api = () => {
   return API
 }
+
+export const FormApi = () => {
+  return API({
+    transformRequest: [
+      (data, _) => {
+        const form = new FormData()
+        for (const key in data) {
+          const value = data[key]
+          if (Array.isArray(value)) {
+            value.forEach((v) => {
+              form.append(key, v as any)
+            })
+          } else {
+            form.append(key, value)
+          }
+        }
+        return form
+      },
+    ],
+  })
+}

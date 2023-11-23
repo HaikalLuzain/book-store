@@ -20,7 +20,12 @@ const Login = () => {
   const [message, setMessage] = useState('')
   const [status, setStatus] = useState('')
 
-  const handleLogin = async (values) => {
+  interface initialValues {
+    email: string
+    password: string
+  }
+
+  const handleLogin = async (values: initialValues) => {
     setStatus('')
     try {
       const res = await Api().post('/auth/login', values)
@@ -50,7 +55,7 @@ const Login = () => {
                 initialValues={{
                   email: '',
                   password: '',
-                }}
+                } as initialValues}
                 onSubmit={handleLogin}
                 validationSchema={Yup.object().shape({
                   email: Yup.string().email().required(),

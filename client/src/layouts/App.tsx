@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from 'react'
-import { UserContextProvider } from 'src/context/UserContext'
+import { UserContextProvider, useUserContext } from 'src/context/UserContext'
 import { Api } from 'src/config/Api'
 import mainRoute from 'src/routes'
 import PrivateRoute from 'src/routes/PrivateRoute'
 import Router from 'src/config/Routes'
 
 const App = () => {
-  const [auth, setAuth] = useState(JSON.parse(localStorage.getItem('user')))
+  const { user } = useUserContext()
+  const [auth, setAuth] = useState(user)
 
   useEffect(() => {
     const getLogin = async () => {

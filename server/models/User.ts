@@ -2,8 +2,6 @@ import mongoose, { Document, Model, model, Schema } from 'mongoose'
 import { User } from 'types/user'
 import uuid from 'uuid'
 
-mongoose.models = mongoose.models || {}
-
 const UserSchema = new Schema(
   {
     _id: {

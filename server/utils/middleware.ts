@@ -38,7 +38,7 @@ export const generateToken = (res: Response, data: any) => {
     httpOnly: true,
     secure: false,
     sameSite: 'lax',
-    maxAge: 3600000,
+    expires: new Date(new Date().getTime() + 1 * 3600 * 1000),
   })
   // res.header('authorization', token)
 
