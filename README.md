@@ -19,7 +19,7 @@
 
 - Install Git
 - Install MongoDB
-- Install NodeJS 20.x >=
+- Install NodeJS 16.x >=
 - Install Yarn
 
 ### Get Started
